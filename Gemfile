@@ -65,7 +65,8 @@ group :production do
 
 end
 
-
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

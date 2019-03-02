@@ -3,12 +3,16 @@ class PostsController < ApplicationController
   def home
   end
   
+  
   def index
-    @posts = Post.all
+    @posts = Post.all.order(id: "DESC")
+    
   end
+  
   
   def new
   end
+  
   
   def create
     @post = Post.new(content: params[:content])
@@ -21,9 +25,11 @@ class PostsController < ApplicationController
     
   end
   
+  
   def edit_form
     @post = Post.find_by(id: params[:id])
   end
+  
   
   def edit
     @post = Post.find_by(id: params[:id])
@@ -36,6 +42,7 @@ class PostsController < ApplicationController
     end
     
   end
+  
   
   def destroy
     @post = Post.find_by(id: params[:id])

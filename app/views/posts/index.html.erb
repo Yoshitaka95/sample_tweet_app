@@ -5,7 +5,14 @@
 <ul class="list-group">
   <li class="list-group-item">
   <%= post.content %>
+  
+
+  <%= link_to "削除", "/destroy/#{post.id}", method: :post, class: "btn btn-danger float-right" %>
+  <%= link_to "編集", "/edit/#{post.id}", class: "btn btn-success float-right" %>
+  
+  
   </li>
 </ul>
 <%end%>
 </div>
+

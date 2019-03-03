@@ -38,7 +38,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to("/index")
     else
-      render("/edit_form")
+      render :action => "edit_form"
     end
     
   end
@@ -47,6 +47,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find_by(id: params[:id])
     @post.destroy
+    redirect_to ("/index")
     
   end
   

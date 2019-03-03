@@ -1,4 +1,10 @@
-<%=form_tag("/edit/#{@post.id}") do%>
-  <textarea name="content"><%=@post.content%></textarea>
-  <input type="submit" value="編集">
-<%end%>
+<div class="container">
+
+  <%=form_tag("/edit/#{@post.id}") do%>
+  <div class="form-group">
+    <textarea class="form-control" name="content"><%=@post.content%></textarea>
+    <button class="btn btn-primary"　type="submit">編集</button>
+    </div>
+  <%end%>
+
+</div>

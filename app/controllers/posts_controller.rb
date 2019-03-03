@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     if  @post.save
       redirect_to("/index")
     else
-      render("/new")
+      render :action => "new"
     end
     
   end

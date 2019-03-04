@@ -30,11 +30,16 @@
 </nav>
  
   
-</nav>
+<% flash.each do |type,msg| %>
+
+<div class="alert alert-<%=type %>" role="alert"><%= msg %></div>
+
+<% end %>
+
 
 <footer class="footer bg-primary">
-  <div class="container">
-    
+  <div class="container ">
+ 
   </div>
 </footer>
 

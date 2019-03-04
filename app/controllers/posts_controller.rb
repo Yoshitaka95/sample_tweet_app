@@ -19,8 +19,11 @@ class PostsController < ApplicationController
     @post = Post.new(content: params[:content])
     
     if  @post.save
+      flash[:success]="投稿しました"
       redirect_to("/index")
+      
     else
+      flash[:danger]="投稿内容が記入されていません"
       render :action => "new"
     end
     
@@ -37,8 +40,10 @@ class PostsController < ApplicationController
     @post.content = params[:content]
     
     if @post.save
+      flash[:success]="編集しました"
       redirect_to("/index")
     else
+      flash[:danger]="編集内容が記入されていません"
       render :action => "edit_form"
     end
     
@@ -48,6 +53,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find_by(id: params[:id])
     @post.destroy
+    flash[:success]="削除しました"
     redirect_to ("/index")
     
   end

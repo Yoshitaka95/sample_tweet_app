@@ -1,8 +1,21 @@
 <div class="container">
-<h1>About Hitokoto</h1>
+<h1>About <em>Hitokoto</em></h1>
 
 <div class="about">
-  <h3>Hitokotoは文字をつぶやき、それを一覧で表示させることが出来るアプリです。</h3>
+    <h3>
+      <em>Hitokoto</em>は文字をつぶやいたり、他の人のつぶやきを一覧で見ることが出来るアプリです。<br><br>
+      ぜひお気軽につぶやいていってください♪
+    </h3>
+</div>
+
+<div>
+    <%=form_tag ("/create") do%>
+  <div class="form-group">
+  <textarea class="form-control" placeholder="何かつぶやいてみよう！" name="content"></textarea>
+  
+  <button class="btn btn-primary"　type="submit">投稿する</button>
+  </div>
+  <%end%>
 </div>
 
 </div>
